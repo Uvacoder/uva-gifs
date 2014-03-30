@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ site.name }}</title>
+  <style>
+    .hidden {
+      display: none
+    }
+  </style>
+</head>
+<body>
+
+  {{ content }}
+
+  <script src="js/jquery.js"></script>
+  <script src="js/filtertable/jquery.filtertable.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('table').filterTable({
+        filterSelector: '#input-filter'
+      });
+    });
+  </script>
+</body>
+</html>

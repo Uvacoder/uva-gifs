@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<input type="search" id="input-filter">
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">View</th>
+      <th scope="col" class="hidden">Tags</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for gif in site.data.gifs %}
+      <tr>
+        <td>{{ gif.title }}.gif</td>
+        <td><a href="gifs/{{ gif.title }}.gif">View</a></td>
+        <td class="hidden">{{ gif.tags }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
