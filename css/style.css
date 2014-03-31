@@ -3,7 +3,7 @@
   -moz-box-sizing: border-box !important;
   box-sizing: border-box !important; }
 
-.hidden {
+.hidden, html.touch .copy-url {
   display: none; }
 
 a, .js-copy-link {
@@ -43,10 +43,11 @@ table {
   width: 100%; }
   table th {
     text-align: left; }
-  table th, table td {
-    padding: 0.5em 0; }
   table td {
     border-bottom: 1px solid #ddd; }
+  table a {
+    display: block;
+    padding: 0.5em 0; }
 
 .copy-wrap {
   position: relative;
