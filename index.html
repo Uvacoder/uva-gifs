@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<header>GIFs</header>
+<header>GIFs <small>(and not GIFs)</small></header>
 
 <input type="search" id="input-filter" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 
@@ -10,7 +10,7 @@ layout: default
   <tbody>
     {% for gif in site.data.gifs %}
     <tr>
-        <td><a href="img/{{ gif.title }}.gif" target="_blank">{{ gif.title }}.gif</a></td>
+        <td><a href="img/{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}" target="_blank">{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}</a></td>
         <td class="hidden">{{ gif.tags }}</td>
     </tr>
     {% endfor %}
