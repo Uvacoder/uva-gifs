@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <title>{{ site.name }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <script src="js/modernizr.js"></script>
 </head>
 <body>
 
@@ -15,33 +13,6 @@
     {{ content }}
   </div>
 
-  <script src="js/jquery.js"></script>
-  <script src="js/filtertable/jquery.filtertable.min.js"></script>
-  <script type="text/javascript" src="bower_components/jquery-zclip/jquery.zclip.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('#input-filter').focus();
-
-      $('table').filterTable({
-        filterSelector: '#input-filter',
-        minRows: 3
-      });
-
-      $('.js-copy-link').each(function() {
-        var $this = $(this),
-            origText = $this.text();
-        $(this).zclip({
-          path: 'bower_components/jquery-zclip/ZeroClipboard.swf',
-          copy: $this.attr('data-copy'),
-          afterCopy: function() {
-            $this.text('Copied!');
-            setTimeout(function() {
-              $this.text(origText);
-            }, 2000);
-          }
-        });
-      });
-    });
-  </script>
+  <script src="js/scripts.min.js"></script>
 </body>
 </html>

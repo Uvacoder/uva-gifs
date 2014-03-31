@@ -1,14 +1,19 @@
+@import 'normalize';
+
 * {
     box-sizing: border-box !important;
 }
 
-.hidden,
-html.touch .copy-url {
+body {
+    font-family: monospace;
+    font-size: 1.2em;
+}
+
+.hidden {
     display: none
 }
 
-a,
-.js-copy-link {
+a {
     color: #555;
     text-decoration: underline;
 
@@ -25,13 +30,12 @@ a,
 }
 
 .wrapper {
-    margin: 1em auto;
+    margin: 1em auto 4em;
     max-width: 400px;
     width: 90%;
 }
 
 header {
-    font-family: monospace;
     font-size: 2em;
     text-align: center;
     margin: 1em 0;
@@ -67,9 +71,4 @@ table {
         display: block;
         padding: .5em 0;
     }
-}
-
-.copy-wrap {
-    position: relative;
-    text-align: right;
 }
