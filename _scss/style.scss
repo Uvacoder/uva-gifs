@@ -47,10 +47,10 @@ header {
 
 input[type="search"] {
     border: 1px solid #ccc;
-    border-radius: 10px;
-    margin: 0 0 2em;
-    padding: .5em;
-    transition: all .3s ease;
+    border-radius: 50px;
+    margin: 0 0 1em;
+    padding: .25em;
+    transition: box-shadow .3s ease, border .3s ease;
     width: 100%;
 
     &:focus {
