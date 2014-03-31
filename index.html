@@ -2,20 +2,20 @@
 layout: default
 ---
 
-<input type="search" id="input-filter">
+<header>GIFS</header>
+
+<input type="search" id="input-filter" placeholder="Search by filename or gif type (ex: deal with it)">
+
 <table>
-  <thead>
-    <tr>
-      <th scope="col">Title</th>
-      <th scope="col">View</th>
-      <th scope="col" class="hidden">Tags</th>
-    </tr>
-  </thead>
   <tbody>
     {% for gif in site.data.gifs %}
       <tr>
-        <td>{{ gif.title }}.gif</td>
-        <td><a href="gifs/{{ gif.title }}.gif">View</a></td>
+        <td><a href="img/{{ gif.title }}.gif" target="_blank">{{ gif.title }}.gif</a></td>
+        <td>
+          <div class="copy-wrap">
+            <a class="js-copy-link" data-copy="http://aaronbushnell.github.io/gifs/img/{{ gif.title }}.gif">Copy URL</a>
+          </div>
+        </td>
         <td class="hidden">{{ gif.tags }}</td>
       </tr>
     {% endfor %}

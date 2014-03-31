@@ -3,22 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ site.name }}</title>
-  <style>
-    .hidden {
-      display: none
-    }
-  </style>
+  <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
-  {{ content }}
+  <div class="wrapper">
+    {{ content }}
+  </div>
 
   <script src="js/jquery.js"></script>
   <script src="js/filtertable/jquery.filtertable.min.js"></script>
+  <script type="text/javascript" src="/bower_components/jquery-zclip/jquery.zclip.js"></script>
   <script>
     $(document).ready(function() {
+      $('#input-filter').focus();
+
       $('table').filterTable({
-        filterSelector: '#input-filter'
+        filterSelector: '#input-filter',
+        minRows: 3
+      });
+
+      $('.js-copy-link').each(function() {
+        var $this = $(this),
+            origText = $this.text();
+        $(this).zclip({
+          path: 'bower_components/jquery-zclip/ZeroClipboard.swf',
+          copy: $this.attr('data-copy'),
+          afterCopy: function() {
+            $this.text('Copied!');
+            setTimeout(function() {
+              $this.text(origText);
+            }, 2000);
+          }
+        });
       });
     });
   </script>
