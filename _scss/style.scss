@@ -2,6 +2,8 @@
 
 * {
     box-sizing: border-box !important;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -31,7 +33,7 @@ a {
 
 .wrapper {
     margin: 1em auto 4em;
-    max-width: 400px;
+    max-width: 500px;
     width: 90%;
 }
 
