@@ -37,16 +37,6 @@ a {
     width: 90%;
 }
 
-header {
-    font-size: 1.5em;
-    text-align: center;
-    margin: .5em 0;
-
-    @media(min-width: 40em) {
-        font-size: 2em;
-    }
-}
-
 input[type="search"] {
     border: 1px solid #ccc;
     border-radius: 50px;
