@@ -13,4 +13,4 @@ Here's what you gotta do:
 4. Submit that pull request
 5. Celebration time!
 
-![BMO Dance](https://aaronbushnell.github.io/gifs/img/dancebmo.gif)
+![BMO Dance](https://aaronbushnell.github.io/gifs/dancebmo.gif)
