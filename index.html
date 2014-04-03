@@ -8,7 +8,7 @@ layout: default
   <tbody>
     {% for gif in site.data.gifs %}
     <tr>
-        <td><a href="img/{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}" target="_blank">{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}</a></td>
+        <td><a href="{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}" target="_blank">{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}</a></td>
         <td class="hidden">{{ gif.tags }}</td>
     </tr>
     {% endfor %}
