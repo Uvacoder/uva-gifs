@@ -1,4 +1,4 @@
 name: GIFs (and not GIFs)
 markdown: redcarpet
 pygments: true
-exclude: ['CNAME', 'gulpfile.js', 'package.json', 'README.md']
+exclude: ['CNAME', 'gulpfile.js', 'package.json', 'README.md', 'node_modules']
