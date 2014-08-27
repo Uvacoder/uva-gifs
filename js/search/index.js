@@ -1,13 +1,14 @@
 'use strict';
 
 $(document).ready(function () {
-    var hash = window.location.hash.substr(1);
+    var regex = /\?[A-Za-z]=/gi,
+        searchQuery = window.location.search.replace(regex, '');
 
     $.fn.changeVal = function (val) {
         return $(this).val(val).trigger("keyup");
     };
 
-    if (hash) {
-        $('#input-filter').changeVal(hash);
+    if (searchQuery) {
+        $('#input-filter').changeVal(searchQuery);
     }
 });
