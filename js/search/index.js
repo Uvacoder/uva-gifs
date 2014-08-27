@@ -2,13 +2,15 @@
 
 $(document).ready(function () {
     var regex = /\?[A-Za-z]=/gi,
-        searchQuery = decodeURI(window.location.search.replace(regex, ''));
+        usesSearch = window.location.search,
+        searchQuery;
 
     $.fn.changeVal = function (val) {
         return $(this).val(val).trigger("keyup");
     };
 
-    if (searchQuery) {
+    if (usesSearch) {
+        searchQuery = decodeURI(usesSearch.replace(regex, ''));
         $('#input-filter').changeVal(searchQuery);
     }
 });
