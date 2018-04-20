@@ -1,8 +1,12 @@
+---
+layout: nil
+---
+
 [
-  {% for gif in site.data.gifs %}
+  {% for post in site.data.gifs %}
     {
       title: "{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}",
       tags: "{{gif.tags}}"
-    }{% unless forloop.last %},{% endunless %}
+    }{% if forloop.last %}{% else %},{% endif %}
   {% endfor %}
 ]
