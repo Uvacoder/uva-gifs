@@ -8,7 +8,7 @@ layout: layout.njk
   {% for gif in gifs %}
     <li data-tags="{{ gif.title }} {{ gif.tags }} {{ gif.ext }}">
       <a
-        class="text-gray-600 px-4 py-2 block border-b hover:text-gray-900"
+        class="text-gray-600 px-4 py-2 block border-b dark:border-gray-800 hover:text-gray-900 dark:hover:text-gray-500"
         href="{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}"
         target="_blank"
       >

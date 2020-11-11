@@ -1,6 +1,11 @@
 module.exports = {
   purge: ["./src/**/*.md", "./src/**/*.html", "./src/**/*.njk"],
   theme: {
+    extend: {
+      screens: {
+        dark: { raw: "(prefers-color-scheme: dark)" },
+      },
+    },
     container: {
       screens: {
         sm: "100%",
