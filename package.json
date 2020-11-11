@@ -1,13 +1,37 @@
 {
   "name": "gifs",
-  "version": "0.0.0",
-  "dependencies": {},
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:files": "eleventy --input=src",
+    "build:assets": "rollup -c",
+    "build": "NODE_ENV=production npm-run-all build:*",
+    "dev:files": "eleventy --input=src --serve",
+    "dev:assets": "rollup -c -w",
+    "start": "npm-run-all -p dev:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronbushnell/gifs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronbushnell/gifs/issues"
+  },
+  "homepage": "https://github.com/aaronbushnell/gifs#readme",
+  "prettier": {},
   "devDependencies": {
-    "gulp": "~3.6.0",
-    "gulp-sass": "~0.7.1",
-    "gulp-autoprefixer": "0.0.6",
-    "gulp-concat": "~2.2.0",
-    "gulp-uglify": "~0.2.1",
-    "gulp-minify-css": "~0.3.0"
+    "@11ty/eleventy": "^0.11.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.0.5",
+    "rollup": "^2.23.1",
+    "rollup-plugin-postcss": "^3.1.5",
+    "rollup-plugin-terser": "^7.0.0"
+  },
+  "dependencies": {
+    "tailwindcss": "^1.6.2"
   }
 }

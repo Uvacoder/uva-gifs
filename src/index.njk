@@ -1,0 +1,33 @@
+---
+layout: layout.njk
+---
+
+<input type="search" class="mt-2 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Search..." data-search>
+
+<ul class="mt-8">
+  {% for gif in gifs %}
+    <li data-tags="{{ gif.title }} {{ gif.tags }} {{ gif.ext }}">
+      <a
+        class="text-gray-600 px-4 py-2 block border-b hover:text-gray-900"
+        href="{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}"
+        target="_blank"
+      >
+      {{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+<script>
+  document.querySelector('[data-search]').addEventListener('keyup', (e) => {
+    if (e.target.value === "") {
+      document.querySelectorAll(`[data-tags]`).forEach(el => el.classList.remove('hidden'));
+      return true;
+    }
+
+    document.querySelectorAll(`[data-tags]`).forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll(`[data-tags*="${e.target.value}"]`)
+      .forEach(el => {
+        el.classList.remove('hidden');
+      });
+  })
+</script>
