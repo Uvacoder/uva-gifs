@@ -24,11 +24,7 @@ layout: layout.njk
       document.querySelectorAll(`[data-tags]`).forEach(el => el.classList.remove('hidden'));
       return true;
     }
-
     document.querySelectorAll(`[data-tags]`).forEach(el => el.classList.add('hidden'));
-    document.querySelectorAll(`[data-tags*="${e.target.value}"]`)
-      .forEach(el => {
-        el.classList.remove('hidden');
-      });
+    document.querySelectorAll(`[data-tags*="${e.target.value}"]`).forEach(el => el.classList.remove('hidden'));
   })
 </script>
