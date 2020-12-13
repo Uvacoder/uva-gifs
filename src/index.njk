@@ -22,8 +22,6 @@ layout: layout.njk
 </ul>
 
 <script>
-  document.querySelector('[data-search]').focus();
-
   document.querySelector('[data-search]').addEventListener('keyup', (e) => {
     if (e.target.value === "") {
       document.querySelectorAll(`[data-tags]`).forEach(el => el.classList.remove('hidden'));
