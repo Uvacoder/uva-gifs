@@ -6,19 +6,24 @@ layout: layout.njk
 
 <ul class="mt-8">
   {% for gif in gifs %}
-    <li data-tags="{{ gif.title }} {{ gif.tags }} {{ gif.ext }}">
-      <a
-        class="text-gray-600 px-4 py-2 block border-b dark:border-gray-800 hover:text-gray-900 dark:hover:text-gray-500"
-        href="{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}"
-        target="_blank"
+    <li data-tags="{{ gif.title }} {{ gif.tags }} {{ gif.ext }}" x-data="{ isOpen: false }">
+      <button
+        class="text-gray-600 px-4 py-2 block border-b dark:border-gray-800 hover:text-gray-900 dark:hover:text-gray-500 w-full text-left"
+        @click="isOpen = !isOpen"
       >
         {{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}
-      </a>
+      </button>
+
+      <template x-if="isOpen">
+        <img src="{{ gif.title }}.{% if gif.ext %}{{ gif.ext }}{% else %}gif{% endif %}" class="block w-full mb-4">
+      </template>
     </li>
   {% endfor %}
 </ul>
 
 <script>
+  document.querySelector('[data-search]').focus();
+
   document.querySelector('[data-search]').addEventListener('keyup', (e) => {
     if (e.target.value === "") {
       document.querySelectorAll(`[data-tags]`).forEach(el => el.classList.remove('hidden'));
